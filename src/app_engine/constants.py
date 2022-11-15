@@ -22,21 +22,21 @@ LOOPBACK_CLIENT_ID = 'LOOPBACK_CLIENT_ID'
 # directly rather than retrieving them from an ICE server provider.
 ICE_SERVER_OVERRIDE = None
 # Enable by uncomment below and comment out above, then specify turn and stun
-# ICE_SERVER_OVERRIDE  = [
-#   {
-#     "urls": [
-#       "turn:hostname/IpToTurnServer:19305?transport=udp",
-#       "turn:hostname/IpToTurnServer:19305?transport=tcp"
-#     ],
-#     "username": "TurnServerUsername",
-#     "credential": "TurnServerCredentials"
-#   },
-#   {
-#     "urls": [
-#       "stun:hostname/IpToStunServer:19302"
-#     ]
-#   }
-# ]
+ICE_SERVER_OVERRIDE  = [
+  {
+    "urls": [
+      "turn:3.38.112.73:3478?transport=udp",
+      "turn:3.38.112.73:3478?transport=tcp"
+    ],
+    "username": "goodsol",
+    "credential": "goodsol"
+  },
+  {
+    "urls": [
+      "stun:3.38.112.73:3478"
+    ]
+  }
+]
 
 ICE_SERVER_BASE_URL = 'https://appr.tc'
 ICE_SERVER_URL_TEMPLATE = '%s/v1alpha/iceconfig?key=%s'
@@ -45,15 +45,15 @@ HEADER_MESSAGE = os.environ.get('HEADER_MESSAGE')
 ICE_SERVER_URLS = [url for url in os.environ.get('ICE_SERVER_URLS', '').split(',') if url]
 
 # Dictionary keys in the collider instance info constant.
-WSS_INSTANCE_HOST_KEY = 'host_port_pair'
+WSS_INSTANCE_HOST_KEY = '3.38.112.73:8089'
 WSS_INSTANCE_NAME_KEY = 'vm_name'
 WSS_INSTANCE_ZONE_KEY = 'zone'
 WSS_INSTANCES = [{
-    WSS_INSTANCE_HOST_KEY: 'apprtc-ws.webrtc.org:443',
+    WSS_INSTANCE_HOST_KEY: '3.38.112.73:8089',
     WSS_INSTANCE_NAME_KEY: 'wsserver-std',
     WSS_INSTANCE_ZONE_KEY: 'us-central1-a'
 }, {
-    WSS_INSTANCE_HOST_KEY: 'apprtc-ws-2.webrtc.org:443',
+    WSS_INSTANCE_HOST_KEY: '3.38.112.73:443',
     WSS_INSTANCE_NAME_KEY: 'wsserver-std-2',
     WSS_INSTANCE_ZONE_KEY: 'us-central1-f'
 }]
