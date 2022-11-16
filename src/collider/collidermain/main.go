@@ -12,8 +12,8 @@ import (
 )
 
 var tls = flag.Bool("tls", false, "whether TLS is used")
-var port = flag.Int("port", 442, "The TCP port that the server listens on")
-var roomSrv = flag.String("mobisys-server", "https://3.38.112.73", "Goodsol's TURN server")
+var port = flag.Int("port", 443, "The TCP port that the server listens on")
+var roomSrv = flag.String("mobisys-server", "https://goodsol.overlinkapp.org", "Goodsol's TURN server")
 
 func main() {
 	flag.Parse()
